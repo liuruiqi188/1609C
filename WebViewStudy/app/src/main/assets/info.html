@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+	function test(){
+		<!--alert("已经点击图片了");-->
+<!--document.getElementsByTagName('img')[0].src='b.jpg'-->
+
+	<!--js调用android方法;-->
+	android.jump()
+	}
+
+	function test1(){<!--前端定义好js方法给android开发人员,android来调js方法-->
+document.getElementsByTagName('img')[0].src='http://d.hiphotos.baidu.com/image/pic/item/b151f8198618367a810fe31727738bd4b21ce572.jpg'
+
+	}
+
+
+
+    </script>
+</head>
+
+<body>
+
+<!--<img alt="" src="http://img04.taobaocdn.com/imgextra/i4/608825099/T2nGXBXXpaXXXXXXXX_!!608825099.jpg_310x310.jpg" onclick="test()"/>-->
+<img src="a.jpg" id="img" onclick="test()"/><br/>
+这里显示的是一个页面
+</body>
+</html>

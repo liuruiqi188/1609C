@@ -6,16 +6,21 @@ import com.example.liuruiqi0218.view.ShowView;
 
 import org.json.JSONArray;
 
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
 /**
  * @author liuruiqi
  * @fileName ShowPresenter
  * @package com.example.liuruiqi0218.presenter
  * @date 2019/2/18 8:50
  **/
-public class ShowPresenter {
+public class ShowPresenter <T>{
 
     private final ShowModel showModel;
     private final ShowView showView;
+    private Reference<T> tWeakReference;
+
 
     //构造
     public ShowPresenter(ShowView view) {
@@ -25,6 +30,13 @@ public class ShowPresenter {
         showView = view;
 
     }
+
+    //在P层使用WeakReference管理外部类对象
+    public void attchView(T t){
+        //创建弱引用
+        tWeakReference = new WeakReference<>(t);
+    }
+
 
     public void relate() {
         //发送数据
@@ -37,4 +49,13 @@ public class ShowPresenter {
             }
         });
     }
+
+    //解除关联
+    public  void deathView(){
+        if (tWeakReference.get()!=null){
+            tWeakReference.clear();
+            tWeakReference=null;
+        }
+    }
+
 }

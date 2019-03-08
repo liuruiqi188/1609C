@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.liuruiqi0218.R;
 import com.example.liuruiqi0218.adapter.MyAdapter;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements ShowView {
         //连接P层
         showPresenter.relate();
 
+        // 关联   关联弱引用管理外部类对象
+        showPresenter.attchView(this);
+
 
     }
 
@@ -42,5 +46,14 @@ public class MainActivity extends AppCompatActivity implements ShowView {
         MyAdapter myAdapter = new MyAdapter(this,data1);
         //设置适配器
         rlv.setAdapter(myAdapter);
+    }
+
+    //解决mvp造成的内存泄漏
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //activity销毁之前p必须先销毁
+        showPresenter.deathView();
+        Log.i("zzz","销毁了");
     }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/erweima"
+        android:text="二维码"/>
+    <EditText
+        android:layout_width="400dp"
+
+        android:layout_height="wrap_content"
+        android:hint="请输入您想买的物品名称"
+        android:id="@+id/et_goods"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索"
+        android:id="@+id/search"/>
+
+</LinearLayout>

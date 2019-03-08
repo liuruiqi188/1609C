@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.liuruiqi0218.R;
 import com.example.liuruiqi0218.activity.MainActivity;
@@ -33,6 +34,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.data1=data1;
     }
 
+    //创建接口
+    public interface OnItemClickLisenter{
+        void onItemLongClickLisenter();
+    }
+    //监听
+    public OnItemClickLisenter itemClickLisenter;
+
+    //set 方法
+    public void setOnItemClickLisenter(OnItemClickLisenter itemClickLisenter){
+        this.itemClickLisenter=itemClickLisenter;
+    }
     @NonNull
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -53,6 +65,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             //设置值
             myViewHolder.item01_text.setText(title);
             ImageLoader.getInstance().displayImage(img,myViewHolder.item01_img);
+
+            //接口点击
+            myViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(context, "长按事件", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
 
         } catch (JSONException e) {
             e.printStackTrace();

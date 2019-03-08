@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.example.test03.custom.CustomSearch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cs"></com.example.test03.custom.CustomSearch>
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/vp"></android.support.v4.view.ViewPager>
+    <RadioGroup
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/rg"
+        android:layout_marginTop="-20dp"></RadioGroup>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/xrlv"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+</LinearLayout>

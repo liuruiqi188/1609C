@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bw.com.liuruiqi0304">
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- iBeancon功能所需权限 -->;
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 个推3.0电子围栏功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+
+            android:name="com.tencent.tauth.AuthActivity"
+
+            android:launchMode="singleTask"
+
+            android:noHistory="true">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+
+
+                <data android:scheme="tencent100424468" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+
+            android:name="com.tencent.connect.common.AssistActivity"
+
+            android:configChanges="orientation|keyboardHidden|screenSize"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+
+            android:name="UMENG_APPKEY"
+
+            android:value="5c07d385f1f556e5f90003c4">
+
+        </meta-data>
+        <activity android:name=".activity.RegistActivity" />
+        <activity android:name=".activity.ShowActivity"></activity>
+        <service
+            android:name=".DemoPushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice">
+        </service>
+        <service android:name=".DemoIntentService"/>
+    </application>
+
+</manifest>

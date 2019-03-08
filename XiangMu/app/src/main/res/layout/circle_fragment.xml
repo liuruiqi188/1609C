@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.example.xiangmu.custom.CustomView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"></com.example.xiangmu.custom.CustomView>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rlv3"
+        android:visibility="gone"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/colorPrimary"
+            android:id="@+id/rlv1"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:id="@+id/rlv2"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+    </LinearLayout>
+
+</LinearLayout>

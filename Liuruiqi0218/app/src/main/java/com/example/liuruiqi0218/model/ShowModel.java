@@ -70,6 +70,7 @@ public class ShowModel {
         OkhttpUtils.doGet(url, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                //
 
             }
 
